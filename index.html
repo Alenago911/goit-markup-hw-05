@@ -30,7 +30,7 @@
       <section class="hero">
         <div class="container-hero">
         <h1 class="title">Effective Solutions for Your Business</h1>
-        <button type="button" class="button"><span class="button-text">Order Service</span></button>
+        <button type="button" class="button" data-modal-open><span class="button-text">Order Service</span></button>
   </div>
       </section>
 
@@ -331,7 +331,7 @@
       <h3 class="fotter-title">Social media</h3>
       <ul class="fotter-list">
         <li class="fotter-item">
-          <a href="" class="fotter-link">
+          <a href="#" class="fotter-link">
             <svg class="fotter-svg" width="24px" height="24px">
             <use href="./imeges3/symbol-defs.svg#icon-instagram-2-1">
             </use>
@@ -339,7 +339,7 @@
         </a>
       </li>
         <li class="fotter-item">
-          <a href="" class="fotter-link">
+          <a href="#" class="fotter-link">
             <svg class="fotter-svg" width="24px" height="24px">
             <use href="./imeges3/symbol-defs.svg#icon-twitter-1-1">
             </use>
@@ -347,7 +347,7 @@
         </a>
         </li>
         <li class="fotter-item">
-          <a href="" class="fotter-link">
+          <a href="#" class="fotter-link">
             <svg class="fotter-svg" width="24px" height="24px">
             <use href="./imeges3/symbol-defs.svg#icon-facebook-1-1">
             </use>
@@ -355,7 +355,7 @@
         </a>
         </li>
         <li class="fotter-item">
-          <a href="" class="fotter-link">
+          <a href="#" class="fotter-link">
             <svg class="fotter-svg" width="24px" height="24px">
             <use href="./imeges3/symbol-defs.svg#icon-linkedin-1-1">
             </use>
@@ -366,5 +366,16 @@
     </div>
     </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-button" data-modal-close>
+          <svg class="modal-svg" width="24px" height="24px">
+            <use href="./imeges3/symbol-defs.svg#icon-close-black-18dp-2-1">
+            </use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
