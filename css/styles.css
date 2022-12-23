@@ -308,8 +308,10 @@ font-size: 16px;
 line-height: 1.5;
 color: var(--white);
 cursor: pointer;
+border-radius: 4px;
 transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
 background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
+box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-btn-all:hover,
@@ -330,8 +332,10 @@ font-size: 16px;
 line-height: 1.5;
 color: var(--iris);
 cursor: pointer;
+border-radius: 4px;
 transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
 background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);  
+box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-btn:hover,
@@ -431,6 +435,10 @@ margin-left: 77px;
  margin-right: 40px; 
 }
 
+.header-list_items:last-child{
+margin-right: 0;
+}
+
 .list-studio{
 display: block; 
 padding-top: 24px;
@@ -463,6 +471,10 @@ margin-left: auto;
 margin-right: 40px;
 }
 
+.subject-list_item:last-child{
+margin-right: 0;
+}
+
 .mail{
 display: block; 
 padding-top: 24px;
@@ -475,13 +487,17 @@ padding-top: 24px;
 padding-bottom: 24px;
 }
 
+.conteiner-flex{
+width: 1158px;
+margin: 0 auto;
+padding: 0 15px;
+}
+
 
 .container-main_navi{
 display: flex;
-width: 1158px;
-padding: 0 15px;
-margin: 0 auto;
 }
+
 
 .hero{
 text-align: center;
@@ -917,22 +933,38 @@ display: flex;
 margin-top: 16px;
 }
 
-.fotter-item{
+/*.fotter-item{
 display: block;
 margin-right: 16px;
+}*/
+
+.fotter-item{
+display: flex; 
+width: 40px;
+height: 40px;
+margin-top: 12px;
+margin-right: 16px;
+border-radius: 50%;
 }
 
 .fotter-link{
 display: flex;
 justify-content: center;
 align-items: center;
-width: 40px;
-height: 40px;
-padding: 12px 12px;
+width: 100%;
+height: 100%;
 border-radius: 50%;
 background: rgba(255, 255, 255, 0.1);
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/*width: 100%;
+height: 100%;
+display: flex; 
+align-items: center; 
+justify-content: center;
+border-radius: 50%;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);*/
 
 .fotter-link:hover{
 background-color: #31D0AA;
@@ -981,6 +1013,7 @@ opacity: 0;
 .portfolio-cards_item:hover .text-extion{
 transform: translateY(0);
 opacity: 1;
+transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-thumb{
@@ -996,7 +1029,7 @@ content: "";
 position: absolute;
 width: 100%;
 height: 100%;
-background-color: rgba(77, 90, 229, 0.5);
+background-color: rgba(77, 90, 229, 0.3);
 transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 transform: translateY(100%);
 opacity: 0;
@@ -1006,6 +1039,12 @@ opacity: 0;
 transform: translateY(0);
 opacity: 1;
 }
+
+
+.thumb-href{
+display: block;
+}
+
 
 /*Modal*/
 
@@ -1017,11 +1056,14 @@ position: fixed;
 width: 100%;
 height: 100%;
 background-color:  rgba(46, 47, 66, 0.4);
+opacity: 1;
+transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden{
 opacity: 0;
 pointer-events: none;
+visibility: hidden ;
 }
 
 .modal{
@@ -1035,7 +1077,7 @@ background-color: #FCFCFC;
 }
 
 .modal-button{
- display: flex;
+display: flex;
 justify-content: center;
 align-items: center;
 width: 24px;
@@ -1044,9 +1086,9 @@ background: #E7E9FC;
 border: 1px solid rgba(0, 0, 0, 0.1);
 border-radius: 50%;
 padding: 8px 8px;
-transition: border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 margin-top: 24px;
 margin-left: 360px;
+transition: border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button:hover{
@@ -1060,23 +1102,40 @@ border-radius: 4px;
 
 .list-studio{
 position: relative;
+text-decoration: none;
 }
 
-.list-studio::after{
+/*.list-studio::after{
 content: '';
 position: absolute;
 display: block;
 width: 48px;
+height: 4px;
 left: 0;
 bottom: 0;
 background-color: var(--iris);
-height: 4px;
 opacity: 0;
 transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+}*/
 
 .list-studio:hover::after{
 opacity: 1;
+}
+
+.current::after{
+content: '';
+position: absolute;
+display: block;
+width: 100%;
+height: 4px;
+left: 0;
+bottom: 0;
+border-radius: 2px;
+background-color: var(--iris);
+}
+
+.current{
+color: var(--iris);
 }
 
 
@@ -1084,23 +1143,8 @@ opacity: 1;
 
 .link{
 position: relative;
+text-decoration: none;
 }
 
-.link::after{
-content: '';
-position: absolute;
-display: block;
-width: 48px;
-left: 0;
-bottom: 0;
-background-color: var(--iris);
-height: 4px;
-opacity: 0;
-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link:hover::after{
-opacity: 1;
-}
 
 
